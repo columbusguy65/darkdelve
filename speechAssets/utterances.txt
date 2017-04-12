@@ -1,0 +1,40 @@
+AttackIntent Attack
+AttackIntent hit
+BeginIntent start adventure
+BreadCrumbIntent turn on BreadCrumb
+BreadCrumbIntent turn off BreadCrumb
+BreadCrumbIntent follow BreadCrumb
+BreadCrumbIntent follow BreadCrumb trail
+CommandIntent set mode {word}
+CommandIntent set {word}
+CommandIntent use {word}
+CommandIntent {word}
+EquipIntent equip {item}
+EquipIntent wear {item}
+ExploreIntent look
+ExploreIntent listen 
+ExploreIntent smell
+ExploreIntent touch
+InteractIntent get
+InteractIntent put
+InteractIntent take
+InventoryIntent inventory 
+ListCommandsIntent list commands
+MoveIntent go {direction}
+MoveIntent move {direction}
+MoveIntent walk {direction}
+MoveIntent {direction}
+SetModeIntent set mode {mode}
+VersionIntent version 
+AMAZON.CancelIntent cancel  
+AMAZON.HelpIntent help 
+AMAZON.NoIntent no 
+AMAZON.PauseIntent pause 
+AMAZON.RepeatIntent repeat 
+AMAZON.ResumeIntent resume
+AMAZON.StartOverIntent start game
+AMAZON.StartOverIntent new game
+AMAZON.StartOverIntent start
+AMAZON.StartOverIntent start new game
+AMAZON.StopIntent stop 
+AMAZON.YesIntent yes 

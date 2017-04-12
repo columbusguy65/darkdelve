@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<treasures>
+    <treasure id="1" name="Vase" value="10" requiresInteraction="false" scale="false">
+        <desc>A beautiful, decorative vase made of what appears to be jade.</desc>
+        <activation></activation>
+        <container></container>
+        <lock id="0" chance="0"/>
+        <trap id="0"  chance="0"/>   
+    </treasure>
+    <treasure id="2" name="Small Box" value="10" requiresInteraction="true" scale="false">
+        <desc>A beautiful, decorative vase made of what appears to be jade.</desc>
+        <activation>You open the box and find 10 coins.</activation>
+         <container></container>
+        <lock id="0" chance="0"/>
+        <trap id="0" chance="0"/>     
+    </treasure>
+    <treasure id="3" name="Strong Box" value="10" requiresInteraction="true" scale="false">
+        <desc>A sturdy box with steel bands wrapping around it. The bands are secured with a lock.</desc>
+        <activation>You open the box and find 10 coins.</activation>
+        <lock id="1" chance="0"/>
+        <trap id="0" chance="0"/>     
+    </treasure>
+    <treasure id="4" name="Cabinet" value="10" requiresInteraction="true" scale="false">
+        <desc>A handcarved but well worn cabinet.</desc>
+        <activation>You open the cabinet and find 10 coins.</activation>
+         <container></container>
+        <lock id="1" chance="0"/>
+        <trap id="0" chance="0"/>     
+    </treasure>
+    <treasure id="5" name="Ruby" value="10" requiresInteraction="false" scale="false">
+        <desc>A deep red glow identifies this gem as a ruby.</desc>
+        <activation></activation>
+        <container></container>
+        <lock id="0" chance="0"/>
+        <trap id="0" chance="0"/>   
+    </treasure>
+</traps>

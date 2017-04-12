@@ -1,0 +1,24 @@
+{
+  "session": {
+    "sessionId": "SessionId.1580a4e7-e7ee-4052-9e58-e74447f6deac",
+    "application": {
+      "applicationId": "amzn1.ask.skill.f502aa7c-92e5-4a93-ad0c-677dd44c34ad"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEEJFB4J27RRUUUUMFVEVJ76KQZTRWLQCFYOBAF6DRKV32I4F7AEBDBDMWZB62TU52R2PMNLWLANEMG7AX2UZ2LGYD6JQ27IFCIICWTOUY7IT4R37RQCRZQDAPTAIL6GR6NE5XMJLMB3PB4XGFFINCN6N4URL2ERQZZ6CGJRNB4QVBKWEFDL54XW75WW6QGT3TNTVJUCQ3HU3NA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.c02eb4cc-ae64-4050-9c7b-35858084b7ac",
+    "locale": "en-US",
+    "timestamp": "2017-04-01T02:43:19Z",
+    "intent": {
+      "name": "ListCommandsIntent",
+      "slots": {}
+    }
+  },
+  "version": "1.0"
+}

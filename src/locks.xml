@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locks>
+    <lock id="1" name="DoorLock" locked="true" autolock="false">
+        <desc>A nicely constructed interior door lock.</desc>
+        <activation>You hear a vaguely sastifiying click.</activation>
+        <pick chance="20">     
+    </lock>
+    <lock id="2" name="PadLock" locked=true autolock=false>
+        <desc>A heavy solid looking padlock.</desc>
+        <activation>You hear a vaguely sastifiying click.</activation>
+        <pick chance="20">     
+    </lock>
+
+</locks>

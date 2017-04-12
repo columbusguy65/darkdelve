@@ -1,0 +1,29 @@
+{
+  "session": {
+    "sessionId": "SessionId.0f7892d7-5593-41cb-bfeb-6e9649ec4ca6",
+    "application": {
+      "applicationId": "amzn1.ask.skill.f502aa7c-92e5-4a93-ad0c-677dd44c34ad"
+    },
+    "attributes": {},
+    "user": {
+      "userId": "amzn1.ask.account.AEEJFB4J27RRUUUUMFVEVJ76KQZTRWLQCFYOBAF6DRKV32I4F7AEBDBDMWZB62TU52R2PMNLWLANEMG7AX2UZ2LGYD6JQ27IFCIICWTOUY7IT4R37RQCRZQDAPTAIL6GR6NE5XMJLMB3PB4XGFFINCN6N4URL2ERQZZ6CGJRNB4QVBKWEFDL54XW75WW6QGT3TNTVJUCQ3HU3NA"
+    },
+    "new": true
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "EdwRequestId.926ebadc-56b1-45c1-b6d4-b6d341323b0c",
+    "locale": "en-US",
+    "timestamp": "2017-04-01T02:39:22Z",
+    "intent": {
+      "name": "MoveIntent",
+      "slots": {
+        "direction": {
+          "name": "direction",
+          "value": "west"
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

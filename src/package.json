@@ -1,0 +1,27 @@
+{
+  "name": "skill-nodejs-darkdelve",
+  "version": "1.0.0",
+  "description": "Dungeon crawler game for Alexa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexa/skill-nodejs-darkdelve.git"
+  },
+  "keywords": [
+    "Alexa",
+    "game",
+    "skill"
+  ],
+  "author": "Zero Cat Order",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/alexa/skill-nodejs-darkdelve/issues"
+  },
+  "homepage": "https://github.com/alexa/skill-nodejs-darkdelve#readme",
+  "dependencies": {
+    "alexa-sdk": "^1.0.7"
+  }
+}

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dressings>
+    <dressing id="1" name="Door Close">
+        <desc>You hear a heavy door close somewhere in the distance.</desc>    
+    </dressing>
+    <dressing id="2" name="Animal Squeaks">
+        <desc>You hear the sound of some type of small animal squeaking.</desc>    
+    </dressing>
+</dressings>

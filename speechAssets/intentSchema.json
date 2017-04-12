@@ -1,0 +1,91 @@
+{
+  "intents": [
+    {
+      "intent": "AttackIntent"
+    },
+    {
+      "intent": "BeginIntent"
+    },
+    {
+      "intent": "BreadCrumbIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "word",
+          "type": "LIST_OF_COMMANDS"
+        }
+      ],
+      "intent": "CommandIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "item",
+          "type": "LIST_OF_ITEMS"
+        }
+      ],
+      "intent": "EquipIntent"
+    },
+     {
+      "intent": "ExploreIntent"
+    },
+     {
+      "intent": "InteractIntent"
+    },
+    {
+      "intent": "InventoryIntent"
+    },
+    {
+      "intent": "ListCommandsIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "direction",
+          "type": "LIST_OF_DIRECTIONS"
+        }
+      ],
+      "intent": "MoveIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "mode",
+          "type": "LIST_OF_MODES"
+        }
+      ],
+      "intent": "SetModeIntent"
+    },
+    {
+      "intent": "VersionIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
+      "intent": "AMAZON.RepeatIntent"
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.YesIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "AMAZON.PauseIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}

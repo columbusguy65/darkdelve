@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--a story adventure in dnd is a module-->
+<quest>
+    <page id="1" name="Start Room">
+          <container></container>
+          <desc>You are in a cold dark place.</desc>
+          <events>
+            <trap id="1" chance=20/>
+            <treasure id="1" chance="5"/>
+            <environment id="0" chance="5"/>
+            <encounter id="0" chance="5"/>    
+          </events>
+          <links>
+              <link id="2" lock="0">North</link>
+              <link id="3" lock="0">West</link>
+           </links>
+    </page>
+<page id="2">
+          <name>first room</name>
+          <desc>This is 20 x 20 room.</desc>
+          <events>
+            <trap id="1" chance="20"/>
+            <treasure id="1" chance="5"/>
+            <environment id="0" chance="5"/>
+            <encounter id="0" chance="5"/>    
+          </events>
+          <links>
+              <link id="1" lock="0">South</link>
+              <link id="3" lock="0">West</link>
+           </links>
+    </page>
+<page id="3">
+          <name>second room</name>
+          <desc>This is a small antechamber.</desc>
+          <events>
+            <trap id="1" chance="20"/>
+            <treasure id="1" chance="5"/>
+            <environment id="0" chance="5"/>
+            <encounter id="0" chance="5"/>    
+          </events>
+          <links>
+              <link id="2" lock="1">East</link>
+           </links>
+    </page>
+</quest>

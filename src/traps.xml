@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<traps>
+    <trap id=1 name="Spike Trap" scale=true>
+        <desc>There appears to be a loose stone in the floor. You see what looks like spikes lining the bottom of a shallow pit.</desc>
+        <activation>Your foot slips along a loose stone in the floor and your leg plunged into the darkness. You have fallen on a spike trap.</activation>
+        <detection enable=true chance=12>You found a trap. It looks like it might be a spike trap. </detection>
+        <disable enable=true chance=14>Luckily you were able to disable the trap.</disable>
+        <damage dice=8 multiplier=2 type="physical"/>
+    </trap>
+
+</traps>
