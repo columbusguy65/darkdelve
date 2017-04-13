@@ -9,35 +9,10 @@
 
 'use strict';
 var rooms = require("./quest");
-
-var startRoom = rooms.quest.page[0];
-var numLinks = startRoom.links.link.length;
-var eastLink,westLink, northLink,southLink,upLink,downLink;
-
-for (var i = 0; i < numLinks; i++) 
-{
-    switch (startRoom.links.link[i]['#text'])
-    {
-    case 'East':
-        eastLink= startRoom.links.link[i]['-id'];
-        break;
-     case 'West':
-        westLink= startRoom.links.link[i]['-id'];
-        break;
-    case 'North':
-        northLink= startRoom.links.link[i]['-id'];
-        break;
-    case 'South':
-        southLink= startRoom.links.link[i]['-id'];
-        break; 
-    case 'Up':
-        upLink= startRoom.links.link[i]['-id'];
-        break;
-     case 'Down':
-        downLink= startRoom.links.link[i]['-id'];
-        break;         
-    };
-}
+var startRoom;
+var numLinks;
+var eastLink, westLink, northLink, southLink, upLink, downLink;
+InitializeExits();
 
 const Alexa = require('alexa-sdk');
 const APP_ID = 'amzn1.ask.skill.f502aa7c-92e5-4a93-ad0c-677dd44c34ad'
@@ -52,6 +27,7 @@ const languageStrings = {
             UP_MSG: 'You climb up the ladder. ',
             DOWN_MSG: 'You climb down the ladder. ',
             OPENING_MOVE: 'Your move!  What would you like to do? ',
+            ABOUT_MSG: 'This wonderful work of fiction is brought to you by, zero cat order. Programmed by Bill Nadvornik. Content by Martin Boso.',
             BRIEF_MSG: 'This mode will tell you a condensed version of everything. Good if you drank too much coffee.',
             EXIT_ONE: 'There is one exit to the ',
             EXIT_MULTI: 'There are exits to the ',
@@ -61,13 +37,14 @@ const languageStrings = {
             HELP_MSG: "No help for you! ",
             HELP_REPROMPT: 'What can I help you with? ',
             MOVE_MSG: 'You gather your energy and move ',
+            NO_EXIT_MSG: 'There is no exit in that location. ',
             NO_MSG: 'You said no. ',
             NORMAL_MSG: 'This mode will tell you a decent amount of detail without the numbers. ',
             NOT_IMPLEMENTED: ' has not been implemented. ',
             PAUSE_MSG: 'I will pause the game for you. Say resume to continue. ',
             PIT_MSG: 'You fell in a spiked pit!! Your lifeless, and highly punctured corspse is never found. The End!',
             RESUME_MSG: 'Resuming your adventure.  ',
-            REPROMPT: 'What would you like to do now?',
+            REPROMPT: ' What would you like to do now? ',
             SKILL_NAME: "dark delve",
             SLEEP_MSG: 'I would not try to sleep in here, with all the monsters wandering around. ',
             START_MSG: "Welcome to Dark Delve. You can say begin adventure. ",
@@ -76,7 +53,7 @@ const languageStrings = {
             VERSION_MSG: 'This is an on going project which will have many versions. The current version is one dot zero. ',
             YES_MSG: 'You said yes. ', 
             COMMANDS: 'ATTACK, BRIEF, CLOSE, DEFEND, DESCRIBE, DROP,' +
-            'EQUIP, EXAMINE, GET, HEAL, HIT, LISTEN, LOOK, LUDACRIS, MOVE, NORMAL, OPEN, READ, RUN,'+
+            'EQUIP, EXAMINE, GET, GO, HEAL, HIT, LISTEN, LOOK, LUDACRIS, MOVE, NORMAL, OPEN, READ, RUN,'+
             'SEARCH, SLEEP, TAKE, TOUCH,  USE, VERSION, WEAR ',
              FUTURE_COMMANDS: 'AGAIN, BRIEF, CLOSE, DRINK, EAT,FLEE, GIVE, JUMP, KILL,' +
             ' LICK, LISTEN,PEER, PULL, PUNCH, PUSH, PUT, RECAP, REMOVE, REPEAT,' +
@@ -90,6 +67,9 @@ const handlers = {
     'LaunchRequest': function () {
         this.emit('Welcome');
         console.log('launched!');
+    },
+    'AboutIntent': function () {
+        this.emit('About'); 
     },
     'AttackIntent': function () {
         this.emit('Attack'); //attack, hit, defend, run
@@ -130,7 +110,15 @@ const handlers = {
          var reprompt = this.t('REPROMPT');
          this.emit(':ask', speechOutput, reprompt);
     },
+    'About': function() {
+        // Create speech output
+        var speechOutput = this.t('ABOUT_MSG');
+         var reprompt = this.t('REPROMPT');
+         this.emit(':ask', speechOutput, reprompt);
+    },
     'Begin': function (){
+        InitializeExits()
+        parseRoom(0)
         var speechOutput = startRoom.desc + " ";
      
         if (numLinks == 0){
@@ -151,7 +139,7 @@ const handlers = {
                  };
             };
          };
-        //this.emit(':tell', speechOutput + "!!");
+        speechOutput = speechOutput + ". " + this.t("REPROMPT");
          this.emit(':ask', speechOutput, this.t("REPROMPT"));
     },
 
@@ -195,23 +183,47 @@ const handlers = {
         switch(direction)
         {
             case 'west':
+                if (westlink != 0) {
                 speechOutput = speechOutput + this.t("WEST_MSG");
-            break;
+                }else{
+                speechOutput = this.t("NO_EXIT_MSG");
+                };
+                break;
             case 'east':
+                if (eastlink != 0) {
                 speechOutput = speechOutput + this.t("EAST_MSG");
-            break;
+                 }else{
+                speechOutput = this.t("NO_EXIT_MSG");
+                };
+                break;
             case 'north':
+                if (northlink != 0) {
                 speechOutput = speechOutput + this.t("NORTH_MSG");
-            break;
+                 }else{
+                speechOutput = this.t("NO_EXIT_MSG");
+                };
+                break;
             case 'south':
-                speechOutput = speechOutput + this.t("SOUTH_MSG");
-            break;
+                if (southlink != 0) {
+                    speechOutput = speechOutput + this.t("SOUTH_MSG");
+                 }else{
+                speechOutput = this.t("NO_EXIT_MSG");
+                };
+                break;
             case 'up':
-                speechOutput = speechOutput + this.t("UP_MSG");
-            break;
+                if (upLink != 0) {
+                    speechOutput = speechOutput + this.t("UP_MSG");
+                 }else{
+                speechOutput =  this.t("NO_EXIT_MSG");
+                };
+                break;
             case 'down':
-                speechOutput = speechOutput + this.t("DOWN_MSG");
-            break;
+                if (downlink != 0) {
+                    speechOutput = speechOutput + this.t("DOWN_MSG");
+                }else{
+                    speechOutput =  this.t("NO_EXIT_MSG");
+                };
+                break;
         }
         speechOutput = speechOutput + this.t("REPROMPT");
         this.emit(':ask', speechOutput, this.t("REPROMPT"));
@@ -289,4 +301,43 @@ exports.handler = (event, context) => {
     alexa.resources = languageStrings;
     alexa.registerHandlers(handlers);
     alexa.execute();
+};
+
+function InitializeExits(){
+    eastLink=0;
+    westLink=0;
+    northLink=0;
+    southLink=0;
+    upLink=0;
+    downLink=0;
+};
+
+function parseRoom(roomID) {
+    startRoom = rooms.quest.page[roomID];
+    numLinks = startRoom.links.link.length;
+    
+    for (var i = 0; i < numLinks; i++) 
+    {
+        switch (startRoom.links.link[i]['#text'])
+        {
+        case 'East':
+            eastLink= startRoom.links.link[i]['-id'];
+            break;
+        case 'West':
+            westLink= startRoom.links.link[i]['-id'];
+            break;
+        case 'North':
+            northLink= startRoom.links.link[i]['-id'];
+            break;
+        case 'South':
+            southLink= startRoom.links.link[i]['-id'];
+            break; 
+        case 'Up':
+            upLink= startRoom.links.link[i]['-id'];
+            break;
+        case 'Down':
+            downLink= startRoom.links.link[i]['-id'];
+            break;         
+        };
+    };
 };

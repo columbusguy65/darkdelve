@@ -1,3 +1,4 @@
+AboutIntent about
 AttackIntent Attack
 AttackIntent hit
 BeginIntent start adventure

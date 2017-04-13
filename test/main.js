@@ -69,7 +69,7 @@ sts.assumeRole({
           }
         };        
         var lambda = require('../src/index.js');
-        var event = require('./version.json');
+        var event = require('./begin.json');
         lambda.handler(event, context());
     }
 });
