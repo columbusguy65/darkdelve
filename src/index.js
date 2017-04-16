@@ -8,14 +8,16 @@
  **/
 
 'use strict';
-var rooms = require("./quest");
-var startRoom;
-var numLinks;
+var rooms = require("./quest2");
+var currentRoom;
+var roomIndex = 0;
+var numLinks = 0;
 var eastLink, westLink, northLink, southLink, upLink, downLink;
+var me;
 InitializeExits();
 
 const Alexa = require('alexa-sdk');
-const APP_ID = 'amzn1.ask.skill.f502aa7c-92e5-4a93-ad0c-677dd44c34ad'
+const APP_ID = 'amzn1.ask.skill.f502aa7c-92e5-4a93-ad0c-677dd44c34ad';
 
 const languageStrings = {
     'en-US': {
@@ -27,7 +29,7 @@ const languageStrings = {
             UP_MSG: 'You climb up the ladder. ',
             DOWN_MSG: 'You climb down the ladder. ',
             OPENING_MOVE: 'Your move!  What would you like to do? ',
-            ABOUT_MSG: 'This wonderful work of fiction is brought to you by, zero cat order. Programmed by Bill Nadvornik. Content by Martin Boso.',
+            ABOUT_MSG: 'This wonderful work of fiction is brought to you by, zero cat order. Programmed by Bill Nadvornik. Content by Martin Bosso.',
             BRIEF_MSG: 'This mode will tell you a condensed version of everything. Good if you drank too much coffee.',
             EXIT_ONE: 'There is one exit to the ',
             EXIT_MULTI: 'There are exits to the ',
@@ -53,7 +55,7 @@ const languageStrings = {
             VERSION_MSG: 'This is an on going project which will have many versions. The current version is one dot zero. ',
             YES_MSG: 'You said yes. ', 
             COMMANDS: 'ATTACK, BRIEF, CLOSE, DEFEND, DESCRIBE, DROP,' +
-            'EQUIP, EXAMINE, GET, GO, HEAL, HIT, LISTEN, LOOK, LUDACRIS, MOVE, NORMAL, OPEN, READ, RUN,'+
+            'EQUIP, EXAMINE, GET, GO, HEAL, HIT, LISTEN, LOOK, LUDACRIS, MOVE, NORMAL, OPEN, READ, REPEAT, RUN,'+
             'SEARCH, SLEEP, TAKE, TOUCH,  USE, VERSION, WEAR ',
              FUTURE_COMMANDS: 'AGAIN, BRIEF, CLOSE, DRINK, EAT,FLEE, GIVE, JUMP, KILL,' +
             ' LICK, LISTEN,PEER, PULL, PUNCH, PUSH, PUT, RECAP, REMOVE, REPEAT,' +
@@ -117,33 +119,13 @@ const handlers = {
          this.emit(':ask', speechOutput, reprompt);
     },
     'Begin': function (){
-        InitializeExits()
-        parseRoom(0)
-        var speechOutput = startRoom.desc + " ";
-     
-        if (numLinks == 0){
-            speechOutput = speechOutput + this.t('EXIT_NONE')
-        };
+        me = this;
+        parseRoom(0);
+        speakRoom();
         
-        if (numLinks == 1) {
-                speechOutput = speechOutput + this.t('EXIT_ONE') + startRoom.links.link[0]['#text']
-            }
-         else
-         {  
-             speechOutput = speechOutput + this.t('EXIT_MULTI') 
-             for (var i = 0; i < numLinks; i++) {
-                speechOutput = speechOutput + startRoom.links.link[i]['#text']
-                if (i != numLinks -1)
-                {
-                   speechOutput = speechOutput + ", and "
-                 };
-            };
-         };
-        speechOutput = speechOutput + ". " + this.t("REPROMPT");
-         this.emit(':ask', speechOutput, this.t("REPROMPT"));
     },
 
-     'Command': function() { //   heal, sleep
+     'Command': function() { //   heal, repeat, sleep
         var item = this.event.request.intent.slots.word.value;
          // Create speech output
        // var speechOutput = item + this.t("NOT_IMPLEMENTED");
@@ -152,6 +134,9 @@ const handlers = {
             {
             case 'heal':
                 speechOutput = this.t("HEAL_MSG");
+            break;
+            case 'repeat':
+                //speechOutput = this.t("SLEEP_MSG");
             break;
             case 'sleep':
                 speechOutput = this.t("SLEEP_MSG");
@@ -177,35 +162,46 @@ const handlers = {
     },
     
     'Move': function() {
+        me = this;
         var direction = this.event.request.intent.slots.direction.value;
          // Create speech output
         var speechOutput = this.t("MOVE_MSG");
+       // westLink = 3;
+        //eastLink = 2;
         switch(direction)
         {
             case 'west':
-                if (westlink != 0) {
+                if (westLink != 0) {
                 speechOutput = speechOutput + this.t("WEST_MSG");
+                parseRoom(westLink -1);
+                speakRoom();
                 }else{
                 speechOutput = this.t("NO_EXIT_MSG");
                 };
                 break;
             case 'east':
-                if (eastlink != 0) {
+                if (eastLink != 0) {
                 speechOutput = speechOutput + this.t("EAST_MSG");
+                 parseRoom(eastLink -1);
+                 speakRoom();
                  }else{
                 speechOutput = this.t("NO_EXIT_MSG");
                 };
                 break;
             case 'north':
-                if (northlink != 0) {
+                if (northLink != 0) {
                 speechOutput = speechOutput + this.t("NORTH_MSG");
+                 parseRoom(northLink -1);
+                 speakRoom();
                  }else{
                 speechOutput = this.t("NO_EXIT_MSG");
                 };
                 break;
             case 'south':
-                if (southlink != 0) {
+                if (southLink != 0) {
                     speechOutput = speechOutput + this.t("SOUTH_MSG");
+                     parseRoom(southLink-1);
+                     speakRoom();
                  }else{
                 speechOutput = this.t("NO_EXIT_MSG");
                 };
@@ -213,13 +209,17 @@ const handlers = {
             case 'up':
                 if (upLink != 0) {
                     speechOutput = speechOutput + this.t("UP_MSG");
+                     parseRoom(upLink-1);
+                     speakRoom();
                  }else{
                 speechOutput =  this.t("NO_EXIT_MSG");
                 };
                 break;
             case 'down':
-                if (downlink != 0) {
+                if (downLink != 0) {
                     speechOutput = speechOutput + this.t("DOWN_MSG");
+                     parseRoom(upLink-1);
+                     speakRoom();
                 }else{
                     speechOutput =  this.t("NO_EXIT_MSG");
                 };
@@ -312,31 +312,59 @@ function InitializeExits(){
     downLink=0;
 };
 
-function parseRoom(roomID) {
-    startRoom = rooms.quest.page[roomID];
-    numLinks = startRoom.links.link.length;
+function speakRoom(roomIndex)
+{
+    //me.emit(':ask', roomIndex, "");
+    var speechOutput = currentRoom.desc + " ";
+     
+        if (numLinks == 0){
+            speechOutput = speechOutput + me.t('EXIT_NONE')
+        };
+        
+        if (numLinks == 1) {
+                speechOutput = speechOutput + me.t('EXIT_ONE') + currentRoom.links.link[0]['__text']
+            }
+         else
+         {  
+             speechOutput = speechOutput + me.t('EXIT_MULTI') 
+             for (var i = 0; i < numLinks; i++) {
+                speechOutput = speechOutput + currentRoom.links.link[i]['__text']
+                if (i != numLinks -1)
+                {
+                   speechOutput = speechOutput + ", and "
+                 };
+            };
+         };
+        speechOutput = speechOutput + ". " + me.t("REPROMPT");
+         me.emit(':ask', speechOutput, me.t("REPROMPT"));
+};
+
+function parseRoom(roomIndex) {
+    InitializeExits();
+    currentRoom = rooms.quest.page[roomIndex];
+    numLinks = currentRoom.links.link.length;
     
     for (var i = 0; i < numLinks; i++) 
     {
-        switch (startRoom.links.link[i]['#text'])
+        switch (currentRoom.links.link[i]['__text'])
         {
         case 'East':
-            eastLink= startRoom.links.link[i]['-id'];
+            eastLink= currentRoom.links.link[i]['_id'];
             break;
         case 'West':
-            westLink= startRoom.links.link[i]['-id'];
+            westLink= currentRoom.links.link[i]['_id'];
             break;
         case 'North':
-            northLink= startRoom.links.link[i]['-id'];
+            northLink= currentRoom.links.link[i]['_id'];
             break;
         case 'South':
-            southLink= startRoom.links.link[i]['-id'];
+            southLink= currentRoom.links.link[i]['_id'];
             break; 
         case 'Up':
-            upLink= startRoom.links.link[i]['-id'];
+            upLink= currentRoom.links.link[i]['_id'];
             break;
         case 'Down':
-            downLink= startRoom.links.link[i]['-id'];
+            downLink= currentRoom.links.link[i]['_id'];
             break;         
         };
     };

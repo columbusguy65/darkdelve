@@ -20,7 +20,7 @@
       "slots": {
         "direction": {
           "name": "direction",
-          "value": "up"
+          "value": "west"
         }
       }
     }

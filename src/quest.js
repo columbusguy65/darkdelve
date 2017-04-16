@@ -12,11 +12,7 @@ module.exports = {
             {
               "-id": "2",
               "#text": "North"
-            },
-            {
-              "-id": "3",
-              "#text": "West"
-            }
+            } 
           ]
         }
       },
@@ -42,10 +38,12 @@ module.exports = {
         "name": "second room",
         "desc": "This is a small antechamber.",
         "links": {
-          "link": {
+          "link": [
+          {
             "-id": "2",
             "#text": "East"
           }
+          ]
         }
       }
     ]
