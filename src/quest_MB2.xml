@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--a story adventure in dnd is a module-->
+<quest>
+<page id="0" name="Bitters Town">          
+	<container></container>
+          <desc>Bitters Town has not been built yet.  There's nothing to do but go adventuring.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="1" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+		    </exits>
+</page>
+<page id="1" name="The Road to Bitters Town">          
+	  <container></container>
+          <desc>A narrow road winds eastward along the coast, with sparse grass and tiny blue flowers along the North berm.  South of the roadside is an alarming drop to the rocky shore and crashing surf, but betweeen two Salt bushes you notice a gap that seems to lead downwards.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="2" lock="0">Down</link>
+		</exits>            
+</page>
+<page id="2" name="The Rocky Trail">         
+	 <container></container>
+          <desc>There is a succession of slick ledges and jagged outcroppings of greasy black rock providing a precarious route from the road to the sandy beach far below.  </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+            <link id="0" lock="0">West</link>
+            <link id="0" lock="0">East</link>	
+            <link id="0" lock="0">North</link>
+            <link id="0" lock="0">South</link>
+            <link id="1" lock="0">Up</link>
+            <link id="3" lock="0">Down</link>
+          </exits>
+</page>
+<page id="3" name="The Beach">
+<container></container>
+          <desc>The beach gently slopes down for some distance into the lapping tides.  The expanse of glistening grey sand stretches away to the east.  To the west, at the foot of the trail, waves crash violently into a cluster of craggy black boulders that extend far out into the ocean from the cliff.  To the North, you see the mouth of an enormous cave. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="2" lock="0">West</link>
+              <link id="4" lock="0">East</link>
+              <link id="5" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="2" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="4" name="The Tide Pools">
+<container></container>
+          <desc>The beach curves northeastwards around a promontory, and ends in a cul-de-sac among more craggy volcanic rocks.  There are a few small tide pools closer to the cliff, and there seems to be motion within them.  In the face of the cliff itself, there is an indentation where the rock appears smoother and more regular.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="3" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="5" name="The Cave Entrance">
+          <container></container>
+          <desc>The round opening is thrice the height of a man and leads to a passageway northwards into the face of the cliff.  The concave stone walls are slimy and eroded, but a sandy floor allows you to keep your footing.  The air reeks of rotting fish.  The cave quickly narrows as it progresses further inside, until it's about eight cubits high.  The floorwhen exposed is slick weathered stone.  Thirty paces along the way into the deepening gloom, a series of very wide steps leads downwards into the darkness on your left.  To your right, a square opening braced by rough timbers leads to a horizontal shaft.  The cave also continues northward, curving away to the right. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="6" lock="0">West</link>
+              <link id="8" lock="0">East</link>
+              <link id="7" lock="0">North</link>
+              <link id="3" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="6" name="The Grand Stairway">
+          <container></container>
+          <desc>A colossal stairway descends westwards, wide enough for five armed men to walk abreast.  Each step is a platform three paces long and a cubit high.  The stone has been weathered smooth as if by millenia of frequent use.  The passage forms a descending rounded shaft with no true walls or ceiling, but the series of steps within are squared and even.  100 long steps down from the cave entrance, there is an intersection. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="11" lock="0">West</link>
+              <link id="5" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="7" name="The Descending Passageway">
+    <container></container>
+          <desc>The tunnel continues from the cave entrance, sloping downwards and gradually turning to the east.  A hundred paces from the Grand Staircase, a gate of heavy iron bars is anchored solidly into the stone from floor to ceiling. A sturdy lock secures the gate.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="15" lock="1">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="5" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="8" name="The Ruined Excavation">
+    <container></container>
+          <desc>A short, crude shaft leads from the Cave Entrance to a large chamber fifty paces long and half as wide.  Clusters of stalactites and stalagmites obscure your view, but the area is filled with the detritus of some activity in the distant past.  There are rotting remains of extensive wooden scaffoldings in several places, piles of rubble from smashed rocks, and signs of digging.  There are rags, waste, and rusted tools on the floor, some strewn about and some in jumbled heaps.  You see at least three human skeletons. Two are in the northeast corner of the chamber, and one is laid across an iron grate to the South.  </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="5" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="9" lock="0">North</link>
+              <link id="10" lock="1">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="9" name="The Spiral Stairs">
+    <container></container>
+          <desc>A crude spiral staircase has been roughly hacked from the rock, allowing a single person to painstakingly move between the ruined excavation and the group of rooms directly below. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="8" lock="0">Up</link>
+              <link id="16" lock="0">Down</link>
+           </exits>
+</page>
+<page id="10" name="The Dark Shaft">
+    <container></container>
+          <desc>A cylindrical enclosure of stones resembling a country well is covered with a locked iron grate. The depth of the dark shaft within cannot be ascertained, but iron handholds and sections of plank have been fashioned into a ladder down one wall, descending into the ominous darkness.      </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="8" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="11" name="The Platform">
+    <container></container>
+          <desc>You've reached a large chamber that resembles a vast hemispherical bubble within the earth.  The floor is level, flat and worn.  The dome above is twice the height as that of the stairs, with an elaborate network of delicate gilded patterns adorning the milky stone.  At the edges of the chamber, The Grand stairway continues ever downwards to the West, but there is another, wider but more eroded series of descending steps to the South. To the North is an ornate archway which leads to an obviously manmade corridor. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="13" lock="0">West</link>
+              <link id="6" lock="0">East</link>	
+              <link id="12" lock="0">North</link>
+              <link id="14" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="12" name="The Great Southern Corridor">
+    <container></container>
+          <desc>The great southern corridor will lead to an astonishing new area.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="11" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="13" name="The Grand Stairway">
+    <container></container>
+          <desc>The colossal stairway continues to descend, and its dimensions remain the same scale. However, after a hundred steps and then another hundred, the excruciating trek continues ever downwards.  After five hundred steps, there is an opening into a cavernous darkness. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="8" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="14" name="The Passage to the Deep">
+     <container></container>
+          <desc>The eroded stone stairway continues downward to the South from the Platform.  The smell of salt and decay hangs heavy in the humid air, and after a hundred steps you see clear seawater completely filling the passageway further below.  The stairs continue on down beneath the surface and into the deep. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="11" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="15" name="The Secured Passageway">
+    <container></container>
+          <desc>You can't go here. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="7" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="16" name="The Common Room">
+          <container></container>
+          <desc>This is a very large room with the remnants of smashed and rotting furniture here and there.  There are doors to the North, East and West, and the Spiral Staircase is at the South end. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="24" lock="0">West</link>
+              <link id="17" lock="0">East</link>	
+              <link id="15" lock="0">North</link>
+              <link id="9" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="17" name="The Entry Hall">
+    <container></container>
+          <desc>This open tiled area has doors to the North, East and South and opens out on the West into the Common Room.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="16" lock="0">West</link>
+              <link id="21" lock="0">East</link>	
+              <link id="18" lock="0">North</link>
+              <link id="22" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="18" name="The Small Storage Room">
+    <container></container>
+          <desc>There are large piles of worthless debris filling most of this room, but you do see a few intact crates and two sturdy chests.  There are doors to the East and South. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="19" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="17" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="19" name="The Storage Office">
+    <container></container>
+          <desc>This small room has a large polished wooden desk and empty shelves along the North wall which are remarkably intact compared to the other rooms in this area.  Rotted pulp which may once have been paper litters much of the floor. There are doors to the West and South.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="18" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="20" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="20" name="The Great Storage Room">
+    <container></container>
+          <desc>There are dozens of sturdy-looking crates stacked on all sides of this much larger room, which appear to be untouched by the ravages of time.  You also see two tall cabinets and two locked chests.  There is a door to the North. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="19" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+    <page id="21" name="The Mess Hall">
+    <container></container>
+          <desc>Two large stone tables dominate the center of this room, surrounded by a dozen or more rotting wooden chairs.  Broken crockery and shattered plates are strewn about the floor.  There is an opening to the Entry Hall to the West, and at the South side of the room an alcove turns a corner leading into the Kitchen. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="17" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="22" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+    <page id="22" name="The Kitchen">
+    <container></container>
+          <desc>The Basins, shelves, hearths and chimneys in this large workspace indicate this was once a kitchen.  The worktables, pots and utensils that have not been carried away by looters and scavengers are smashed, rusted, and otherwise ruined. There is a sturdy door to the South and on the East an alcove opens into the Mess Hall. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="21" lock="0">East</link>	
+              <link id="17" lock="0">North</link>
+              <link id="23" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="23" name="The Pantry">
+    <container></container>
+          <desc>This stone-walled room is lined with shelves of various heights which still contain some intact lidded pots.  Rotting sacks are piled on the floor at one side, and a few smashed crates which now seem to be empty.  Examination of the pots reveals the fragrance of exotic spices, but only dust remains. The door to the North leads back to the Kitchen.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="22" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="24" name="The Barracks Entry">
+    <container></container>
+          <desc>Several well-preserved couches and decorative tables are found in this area, although a couple have been overturned.  A pile of rags and human bones lies on the floor to the West, near the archway leading to another room.  There are doorways to the North and South, and an archway to the East back to the Common Room. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="27" lock="0">West</link>
+              <link id="16" lock="0">East</link>	
+              <link id="25" lock="0">North</link>
+              <link id="29" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="25" name="The Northeast Barracks">
+    <container></container>
+          <desc>Four collapsed sets of bunk beds in this small room indicate that it was once a sleeping quarters for multiple parties.  There are four chests as well, but they are all smashed or opened, and all are empty.  There are doors to the West and South. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="26" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="24" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="26" name="The Northwest Barracks">
+    <container></container>
+          <desc>Four collapsed sets of bunk beds crowd this small room. There are four chests here.  Most have been smashed or opened, but one remains intact.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="25" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="27" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="27" name="The Barracks Foyer">
+    <container></container>
+          <desc>This spacious room contains a few sofas, chairs and tables which seem to be reasonably unweathered.  There are two ornate rugs on the stone floor, and the furniture seems to remain placed in its original arrangement.  There are doors to the North and South, an archway to the East leading to the Entry, and another archway to the West leading into a larger room. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="30" lock="0">West</link>
+              <link id="24" lock="0">East</link>	
+              <link id="26" lock="0">North</link>
+              <link id="28" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="28" name="The South Barracks">
+    <container></container>
+          <desc>This cozy room has two large beds, as well a sturdy wooden desk. A lion skin rug covers most of the stone floor, and there is a solid-looking locked chest at the foot of each bed. There are doors to the North and East.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="29" lock="0">East</link>	
+              <link id="27" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="29" name="The Lavatory">
+    <container></container>
+          <desc>This large area has basins, tubs, fountains and oubliettes carved from the stone in a thoughtful arragement.  There are stone benches along the South wall.  This is obviously a lavatory created for the use of all the occupants of this complex.  There are doors to the North and West. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="28" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="24" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="30" name="The Armory">
+    <container></container>
+          <desc>This very large room has implements of battle displayed on the walls and in numerous racks along the sides.  There is display space for adequate weaponry and armor to equip a score of men, but many pieces have been removed.  You see several serviceable swords, axes, shields and helmets here. The 3 large cabinets alond the east wall may contain more equipment. There is an opening into the Barracks Foyer to the East and stairs leading downward to the South.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="27" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="31" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="31" name="The Back Stairway">
+    <container></container>
+          <desc>Stairs lead downward from the South end of the Armory to a cozy-looking room below.  Fine, polished wooden paneling ornaments the walls on either side.  There are a dozen steps.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="30" lock="0">North</link>
+              <link id="32" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+          </exits>
+</page>
+<page id="32" name="The Lounge">
+    <container></container>
+          <desc>This is the Lounge, description pending.  Exits North, East, South, West.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+			      <link id="33" lock="0">West</link>
+              <link id="36" lock="0">East</link>	
+              <link id="31" lock="0">North</link>
+              <link id="35" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="33" name="The Archaeologist's Study">
+    <container></container>
+          <desc>This is the Archaeologist's Study, description pending.  Exits North, East, and South.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+			  <link id="34" lock="1">North</link>
+              <link id="0" lock="0">West</link>
+              <link id="32" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="35" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="34" name="The Archaeologist's Quarters">
+    <container></container>
+          <desc>This is the Archaeologist's Quarters, description pending.  Exit South.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="33" lock="1">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="35" name="The Library">
+    <container></container>
+          <desc>This is the Library, description pending.  Exits North, East, West. </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+   			      <link id="33" lock="0">West</link>
+              <link id="36" lock="0">East</link>	
+              <link id="32" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="36" name="The Wizard's Quarters">
+    <container></container>
+          <desc>This is the Wizard's Quarters, description pending.  Exits North and West.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+   			  <link id="37" lock="0">North</link>
+              <link id="32" lock="0">West</link>
+              <link id="0" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="37" name="The Wizard's Study">
+    <container></container>
+          <desc>This is the Wizard's Study, description pending.  Exits South and East.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="0" lock="0">West</link>
+              <link id="38" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="36" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="38" name="The Wizard's Workshop">
+    <container></container>
+          <desc>This is the Wizard's Workshop, description pending.  Exits East, South, and West.</desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="37" lock="1">West</link>
+              <link id="39" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="35" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>
+<page id="39" name="Portal Platform ">
+    <container></container>
+          <desc>This is the Portal Platform, description pending.  </desc>
+          <events>
+            <trap id="0" chance="0"/>
+            <treasure id="0" chance="0"/>
+            <environment id="0" chance="0"/>
+            <encounter id="0" chance="0"/>    
+          </events>
+          <exits>
+              <link id="38" lock="0">West</link>
+              <link id="3" lock="0">East</link>	
+              <link id="0" lock="0">North</link>
+              <link id="0" lock="0">South</link>
+              <link id="0" lock="0">Up</link>
+              <link id="0" lock="0">Down</link>
+           </exits>
+</page>>
+</quest>

@@ -120,7 +120,7 @@ const handlers = {
     },
     'Begin': function (){
         me = this;
-        parseRoom(0);
+        parseRoom(2);
         speakRoom();
         
     },
@@ -316,56 +316,85 @@ function speakRoom(roomIndex)
 {
     //me.emit(':ask', roomIndex, "");
     var speechOutput = currentRoom.desc + " ";
-     
+    
         if (numLinks == 0){
             speechOutput = speechOutput + me.t('EXIT_NONE')
         };
         
         if (numLinks == 1) {
-                speechOutput = speechOutput + me.t('EXIT_ONE') + currentRoom.links.link[0]['__text']
-            }
+                var indexExit = 0;
+                currentRoom.exits.link.forEach(function(element) {
+                    if (element._id> 0)
+                    {
+                        indexExit++;
+                    };
+
+                }, this);
+                speechOutput = speechOutput + me.t('EXIT_ONE') + currentRoom.exits.link[indexExit].__text
+        }
          else
          {  
              speechOutput = speechOutput + me.t('EXIT_MULTI') 
-             for (var i = 0; i < numLinks; i++) {
-                speechOutput = speechOutput + currentRoom.links.link[i]['__text']
-                if (i != numLinks -1)
-                {
-                   speechOutput = speechOutput + ", and "
-                 };
+              var indexCurrent = 0;
+                currentRoom.exits.link.forEach(function(element) {
+                    if (element._id> 0)
+                    {
+                        speechOutput = speechOutput + currentRoom.exits.link[indexCurrent].__text;
+                        if (indexCurrent < numLinks -1)
+                        {
+                            speechOutput = speechOutput +", ";
+                        }
+                        indexCurrent++;
+                    };
+
+                }, this);
             };
-         };
         speechOutput = speechOutput + ". " + me.t("REPROMPT");
          me.emit(':ask', speechOutput, me.t("REPROMPT"));
+};
+
+function getNumLinks(exitLinks)
+{
+    var counter = 0;
+    for (var i=0; i < 6; i++)
+    {
+        if (exitLinks.link[i]._id > 0)
+        {
+            counter++;
+        } 
+    }
+    return counter;
+//currentRoom.exits.link.length
 };
 
 function parseRoom(roomIndex) {
     InitializeExits();
     currentRoom = rooms.quest.page[roomIndex];
-    numLinks = currentRoom.links.link.length;
     
-    for (var i = 0; i < numLinks; i++) 
+    numLinks = getNumLinks(currentRoom.exits);
+    
+    for (var i = 0; i < 5; i++) 
     {
-        switch (currentRoom.links.link[i]['__text'])
+        switch (currentRoom.exits.link[i].__text)
         {
         case 'East':
-            eastLink= currentRoom.links.link[i]['_id'];
+            eastLink= currentRoom.exits.link[i]._id;
             break;
         case 'West':
-            westLink= currentRoom.links.link[i]['_id'];
+            westLink= currentRoom.exits.link[i]._id;
             break;
         case 'North':
-            northLink= currentRoom.links.link[i]['_id'];
+            northLink= currentRoom.exits.link[i]._id;
             break;
         case 'South':
-            southLink= currentRoom.links.link[i]['_id'];
+            southLink= currentRoom.exits.link[i]._id;
             break; 
         case 'Up':
-            upLink= currentRoom.links.link[i]['_id'];
+            upLink= currentRoom.exits.link[i]._id;
             break;
         case 'Down':
-            downLink= currentRoom.links.link[i]['_id'];
+            downLink= currentRoom.exits.link[i]._id;
             break;         
         };
-    };
-};
+        };
+   };
